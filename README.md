@@ -1,66 +1,39 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+1. Create SQL query which will select all possible address object type values for given address object type
+-- @see sql\1.sql
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+2. Create SQL query which will select all possible delivery addresses for pickup point delivery types
+-- @see sql\2.sql
 
-## About Laravel
+3. Create PHP class or function which will create and edit user inputted address
+@see App\Console\Commands\CreateOrUpdateAddress or run php artisan app:create-or-update-address for testing
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+4. Create SQL query which will select address display values where each address object type is row. For example:
+-- @see sql\4.sql
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+5. Create PHP class or function which will build Full Address for inputted address
+@see App\Console\Commands\BuildFullAddress or run php artisan app:build-full-address for testing
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+6. Create SQL query which will select delivery fee for delivery type, order amount, order weight and for specific address type value
+-- @see sql\6.sql
 
-## Learning Laravel
+7. Change delivery fee configuration so that DPD delivery for Riga will be 5 EUR cheaper than current delivery fee for DPD
+@see App\Console\Commands\ChangeDeliveryFeeConfiguration or run php artisan app:change-delivery-fee-configuration
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+8. Change delivery fee configuration for extra 3 EUR charge for deliveries on Saturday
+@see App\Console\Commands\ChangeDeliveryFeeOnSaturdays or run php artisan app:change-delivery-fee-on-saturdays
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+9. Create SQL query to retrieve Pickup Point count for Omniva grouped by city
+-- @see sql\9.sql
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+10. Create delivery fee configuration for delivery to Lithuania shipped by DPD with fee 10 EUR if order weight is less than 10kg and 20 EUR otherwise
+@see App\Console\Commands\CreateCustomDeliveryFeeConfiguration or run app:create-custom-delivery-fee-configuration
 
-## Laravel Sponsors
+11. Create SQL which will normalize phone numbers in table contacts by removing country code. Country code is predefined 371
+-- @see sql\11.sql
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+12. Eliminate normalized phone number duplicates in table contacts. Leave most recent contact (sorting by ID descending)
+@see App\Console\Commands\DeleteNormalizedPhoneNumbers or run app:delete-normalized-phone-numbers
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+13. Assume you have orders table and there is a requirement to generate unique order numbers which can’t have gaps.
+Create needed database structures and PHP class or function to generate unique order numbers without gaps
+@see App\Console\Commands\CreateOrdersTable or run app:create-orders-table
