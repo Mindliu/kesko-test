@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Enums;
+
+final class DeliveryTypeEnum
+{
+    const DELIVERY_TYPE_DPD = 1;
+    const DELIVERY_TYPE_LATVIJAS_PASTS_D2D = 2;
+    const DELIVERY_TYPE_ITELLA_PICKUP = 3;
+    const DELIVERY_TYPE_DPD_PICKUP = 4;
+    const DELIVERY_TYPE_OMNIVA_PICKUP = 5;
+
+    const DELIVERY_TYPE_DPD_NAME = 'DPD';
+    const DELIVERY_TYPE_LATVIJAS_PASTS_D2D_NAME = 'Latvijas Pasts D2D';
+    const DELIVERY_TYPE_ITELLA_PICKUP_NAME = 'Itella';
+    const DELIVERY_TYPE_DPD_PICKUP_NAME = 'DPD Paku Bode';
+    const DELIVERY_TYPE_OMNIVA_PICKUP_NAME = 'Omniva';
+
+    const DELIVERY_TYPE_HOME_DELIVERY = 'HOME_DELIVERY';
+    const DELIVERY_TYPE_PICKUP_POINT = 'PICKUP_POINT';
+}

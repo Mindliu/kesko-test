@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Enums;
+
+final class AddressTypeEnum
+{
+    const ADDRESS_TYPE_LV = 'LV';
+    const ADDRESS_TYPE_LT = 'LT';
+    const ADDRESS_TYPE_EE = 'EE';
+    const ADDRESS_TYPE_EU = 'EU';
+    const ADDRESS_TYPE_EE_PICKUP_POINTS_WO_POSTAL_CODE = 'EE_PICKUP_POINTS_WO_POSTAL_CODE';
+    const ADDRESS_TYPE_LT_PICKUP_POINTS_WO_POSTAL_CODE = 'LT_PICKUP_POINTS_WO_POSTAL_CODE';
+    const ADDRESS_TYPE_LV_PICKUP_POINTS_WO_POSTAL_CODE = 'LV_PICKUP_POINTS_WO_POSTAL_CODE';
+
+    const ADDRESS_TYPE_MAPPING = [
+        self::ADDRESS_TYPE_LV => 1,
+        self::ADDRESS_TYPE_LT => 2,
+        self::ADDRESS_TYPE_EE => 3,
+        self::ADDRESS_TYPE_EU => 4,
+        self::ADDRESS_TYPE_EE_PICKUP_POINTS_WO_POSTAL_CODE => 5,
+        self::ADDRESS_TYPE_LT_PICKUP_POINTS_WO_POSTAL_CODE => 6,
+        self::ADDRESS_TYPE_LV_PICKUP_POINTS_WO_POSTAL_CODE => 7,
+    ];
+}
